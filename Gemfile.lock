@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     multi_database (0.0.1)
-      rails (~> 4.2.1)
+      rails
 
 GEM
   remote: https://rubygems.org/
