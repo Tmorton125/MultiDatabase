@@ -8,16 +8,15 @@ Gem::Specification.new do |s|
   s.name        = "multi_database"
   s.version     = MultiDatabase::VERSION
   s.authors     = ["Tmorton125"]
-  s.email       = [""]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of MultiDatabase."
-  s.description = "TODO: Description of MultiDatabase."
+  s.email       = ["tmorton125@gmail.com"]
+  s.homepage    = "http://github.com"
+  s.summary     = "Allows connection to multiple Databases"
+  s.description = "Allows user to define multiple database connections in database for better management"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails"
-
   s.add_development_dependency "sqlite3"
 end
