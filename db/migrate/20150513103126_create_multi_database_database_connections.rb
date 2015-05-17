@@ -2,9 +2,9 @@ class CreateMultiDatabaseDatabaseConnections < ActiveRecord::Migration
   def change
     create_table :multi_database_database_connections do |t|
 
-      t.string :connection_name
-      t.string :database_name
-      t.string :host
+      t.string :connection_name, null: false
+      t.string :database_name, null: false
+      t.string :host, null: false
       t.string :username
       t.string :password
       t.integer :timeout
@@ -13,5 +13,8 @@ class CreateMultiDatabaseDatabaseConnections < ActiveRecord::Migration
       t.timestamps null: false
       
     end
+
+    add_index :multi_database_database_connections, :connection_name
+    add_index :multi_database_database_connections, :database_name
   end
 end
