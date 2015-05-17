@@ -2,7 +2,7 @@ class CreateMultiDatabaseDatabaseConnections < ActiveRecord::Migration
   def change
     create_table :multi_database_database_connections do |t|
 
-      t.string :connection_name, null: false
+      t.string :connection_name, null: false, unique: true
       t.string :database_name, null: false
       t.string :host, null: false
       t.string :username

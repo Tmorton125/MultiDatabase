@@ -1,0 +1,17 @@
+.nav
+  =link_to "Return to Main Page", main_app.root_url
+
+
+%h3="Database Connections"
+
+
+%div.list
+  %table.list
+    = render partial: 'header_row'
+    - @connections.each do |connection|
+      = render partial: 'connection', object: connection
+
+
+
+
+
