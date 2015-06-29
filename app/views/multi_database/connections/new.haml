@@ -1,0 +1,30 @@
+%nav
+
+
+%h3= "Create New Connection"
+
+%div.actionlist
+  .item
+    = link_to "View Connections", multidatabase.connections_path
+
+
+
+= form_for @connection, url: { action: "create"}, html: {class: "standard_form"} do |f|
+  %table
+    %tr
+      %td= f.label :connection_name
+      %td= f.text_field :connection_name
+    %tr
+      %td= f.label :host
+      %td= f.text_field :host
+    %tr
+      %td= f.label :database_name
+      %td= f.text_field :database_name
+    %tr
+      %td= f.label :username
+      %td= f.text_field :username
+    %tr
+      %td= f.label :password
+      %td= f.password_field :password
+    %tr
+      %td.button{colspan: 2}= f.submit "Create Connection"
