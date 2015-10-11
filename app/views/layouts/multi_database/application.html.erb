@@ -2,8 +2,10 @@
 <html>
 <head>
   <title>MultiDatabase</title>
-  <%= stylesheet_link_tag    "multi_database/application", media: "all" %>
-  <%= javascript_include_tag "multi_database/application" %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    "multi_database/application", media: "all",  'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "multi_database/application", 'data-turbolinks-track' => true  %>
   <%= csrf_meta_tags %>
 </head>
 <body>
