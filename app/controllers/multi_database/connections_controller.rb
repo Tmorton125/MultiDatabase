@@ -9,7 +9,7 @@ module MultiDatabase
   	end
 
     def show
-      @connection = MultiDabase::DatabaseConnection.where(id: params[:id]).first
+      @connection = MultiDatabase::DatabaseConnection.where(id: params[:id]).first
     end
 
   	def new
@@ -24,7 +24,7 @@ module MultiDatabase
       @connection = MultiDatabase::DatabaseConnection.new(database_params)
 
       if @connection.save
-        redirect_to @connection
+        redirect_to multidatabase.connection_url(@connection)
       else
         render :new
       end

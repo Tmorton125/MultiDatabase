@@ -1,5 +1,6 @@
 %tr
-  %td= connection.connection_name
+  %td= link_to(connection.connection_name, multidatabase.connection_url(connection))
   %td= connection.host
   %td= connection.database_name
+  %td= connection.username
   %td= connection.active ? "Active" : "Disabled"
