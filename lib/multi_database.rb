@@ -20,7 +20,9 @@ module MultiDatabase
      		information = DatabaseConnection.where(connection_name: connection_name).first
      		unless information.blank?
 
-     			# TODO establish connection to the new database here
+     			# Establishes database connection and returns results
+                db_connection = establish_connection(adapter: information.adapter.adapter, host: information.host, database: information.database_name, username: information.username, password: information.password)
+                db_connection.connection
 
      		else
      			logger.warn("Unable to find connection information at this time please define configuration for #{connection_name}")
