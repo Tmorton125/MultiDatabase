@@ -18,5 +18,13 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails"
+  s.add_dependency "gretel"
+  s.add_dependency 'sass-rails', '~> 4.0.3'
+  s.add_dependency 'turbolinks'
+  s.add_dependency 'haml-rails'
+  s.add_dependency 'html2haml'
+  s.add_dependency "bootstrap-sass"
+  s.add_dependency "autoprefixer-rails"
   s.add_development_dependency "sqlite3"
+
 end
