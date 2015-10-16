@@ -1,11 +1,8 @@
-%nav
-
-
-%h3= "Create New Connection"
+%h3= "Edit Connection - #{@connection.connection_name}"
 
 %div.actionlist
   .item
-    = link_to "View Connections", multidatabase.connections_path
+    = link_to "View Connection - #{@connection.connection_name}", multidatabase.connection_path(@connection)
 
 - if !@connection.errors.blank?
   %div.error_explanation
@@ -14,11 +11,8 @@
       - @connection.errors.full_messages.each do |error|
         %li= error 
 
-= form_for @connection, url: { action: "create"}, html: {class: "standard_form"} do |f|
+= form_for @connection, url: { action: "update"}, html: {class: "standard_form"} do |f|
   %table
-    %tr
-      %td= f.label :connection_name
-      %td= f.text_field :connection_name
     %tr
       %td= f.label :adapter_id, "Adapter"
       %td= f.collection_select(:adapter_id, @adapters, :id, :adapter, { }, { class: 'normal-dropdown'} )
@@ -35,4 +29,4 @@
       %td= f.label :password
       %td= f.password_field :password
     %tr
-      %td.button{colspan: 2}= f.submit "Create Connection"
+      %td.button{colspan: 2}= f.submit "Update Connection"

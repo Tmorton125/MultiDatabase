@@ -1,5 +1,34 @@
-%h3="Database Connection"
+- if !@connection.blank?
 
-%div.actionlist
-  .item
-    = link_to "View Connections", multidatabase.connections_path
+  %div.actionlist
+    .item
+      = link_to "View Connections", multidatabase.connections_path
+    .item
+      = link_to "Edit Connection", multidatabase.edit_connection_path(@connection)
+    .item
+      = link_to "Delete Connection", multidatabase.connection_path(@connection), method: :delete, data: {confirm: "Are you sure you want to delete #{@connection.connection_name}?"}      
+
+  %h3="Database Connection - #{@connection.connection_name}"
+
+  %table
+    %tr
+      %td=label_tag(:adapter, "Adapter")
+      %td= @connection.adapter.blank? ? "N/A" : @connection.adapter.adapter
+    %tr
+      %td=label_tag(:host, "Host")
+      %td= @connection.host
+    %tr
+      %td=label_tag(:database_name, "Database Name")
+      %td= @connection.database_name
+    %tr
+      %td= label_tag(:username, "Username")
+      %td= @connection.username
+- else
+
+  %div.actionlist
+    .item
+      = link_to "View Connections", multidatabase.connections_path
+
+  %strong.error="Database Connection is not available for display may have been removed from system!"
+
+

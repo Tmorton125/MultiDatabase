@@ -4,6 +4,7 @@ module MultiDatabase
     # attributes
   	# :id
   	# :connection_name
+    # :adapter_id
   	# :database_name
   	# :host
   	# :username

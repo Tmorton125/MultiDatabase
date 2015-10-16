@@ -32,3 +32,11 @@
    background-color: green;
 
 }
+
+#flash_error_message{
+	color: red;
+}
+
+#flash_success_message{
+	color: green;
+}

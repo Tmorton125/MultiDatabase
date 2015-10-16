@@ -10,6 +10,11 @@
 </head>
 <body>
 
+<p id="flash_success_message"> <%= flash[:success] %></p>
+<p id="flash_error_message">  <%= flash[:error]  %></p>
+<% flash[:success] = nil %>
+<% flash[:error] = nil %>
+
 <%= yield %>
 
 </body>
