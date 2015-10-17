@@ -22,11 +22,7 @@
 
 }
 
-.field_with_errors {
-	padding: 1px;
-	background-color: red;
-	display: table;
-}
+
 
 .test {
    background-color: green;

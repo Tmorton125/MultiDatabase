@@ -11,7 +11,7 @@
 
 
 %div.list
-  %table.list
+  %table.table-striped
     = render partial: 'header_row'
     - @connections.each do |connection|
       = render partial: 'connection', object: connection

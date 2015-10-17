@@ -7,32 +7,47 @@
   .item
     = link_to "View Connections", multidatabase.connections_path
 
-- if !@connection.errors.blank?
-  %div.error_explanation
-    %h4= "The following #{pluralize(@connection.errors.count, 'error')} prohibited this article from being saved:"
-    %ul
-      - @connection.errors.full_messages.each do |error|
-        %li= error 
+%br
 
-= form_for @connection, url: { action: "create"}, html: {class: "standard_form"} do |f|
-  %table
-    %tr
-      %td= f.label :connection_name
-      %td= f.text_field :connection_name
-    %tr
-      %td= f.label :adapter_id, "Adapter"
-      %td= f.collection_select(:adapter_id, @adapters, :id, :adapter, { }, { class: 'normal-dropdown'} )
-    %tr
-      %td= f.label :host
-      %td= f.text_field :host
-    %tr
-      %td= f.label :database_name
-      %td= f.text_field :database_name
-    %tr
-      %td= f.label :username
-      %td= f.text_field :username
-    %tr
-      %td= f.label :password
-      %td= f.password_field :password
-    %tr
-      %td.button{colspan: 2}= f.submit "Create Connection"
+= form_for @connection, url: { action: "create"}, html: {class: "form-horizontal"} do |f|
+
+  - if !@connection.errors.blank?
+    %div.error_explanation
+      %h4= "The following #{pluralize(@connection.errors.count, 'error')} prohibited this article from being saved:"
+      %ul
+        - @connection.errors.full_messages.each do |error|
+          %li= error 
+
+  %div.form-group
+    =f.label :connection_name, class: 'col-sm-2 control-label'
+    %div.col-sm-10
+      = f.text_field :connection_name
+
+  %div.form-group
+    =f.label :adapter_id, "Adapter", class: 'col-sm-2 control-label'
+    %div.col-sm-10
+      = f.collection_select(:adapter_id, @adapters, :id, :adapter, {}, {class: 'form-control input-sm'})
+
+  %div.form-group
+    =f.label :host, class: 'col-sm-2 control-label'
+    %div.col-sm-10
+      = f.text_field :host
+
+  %div.form-group
+    =f.label :database_name, class: 'col-sm-2 control-label'
+    %div.col-sm-10
+      = f.text_field :database_name
+
+  %div.form-group
+    =f.label :username, class: 'col-sm-2 control-label'
+    %div.col-sm-10
+      = f.text_field :username
+
+  %div.form-group
+    =f.label :password, class: 'col-sm-2 control-label'
+    %div.col-sm-10
+      = f.password_field :password
+
+  %div.form-group
+    %div.col-sm-offset-2.col-sm-10
+      = f.submit "Create Connection", class: 'btn btn-primary btn-lg'  
