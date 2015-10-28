@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'html2haml'
   s.add_dependency "bootstrap-sass"
   s.add_dependency "autoprefixer-rails"
+  s.add_dependency "json"
   s.add_development_dependency "sqlite3"
 
 end
