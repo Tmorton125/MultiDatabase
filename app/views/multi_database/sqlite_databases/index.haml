@@ -1,0 +1,11 @@
+.nav
+  =link_to "Return to Main Page", main_app.root_url
+
+
+%h3= "SQLite3 Databases"
+
+%div.list
+  %table.table-striped
+    = render partial: 'multi_database/shared/header_row'
+    - @sqlite_schemas.each do |db|
+      = render partial: 'multi_database/shared/db_schema', object: db

@@ -1,0 +1,5 @@
+%tr
+  %td= db_schema.connection_name
+  %td= db_schema.adapter.blank? ? "N/A" : db_schema.adapter.adapter
+  %td= db_schema.host
+  %td= db_schema.database_name

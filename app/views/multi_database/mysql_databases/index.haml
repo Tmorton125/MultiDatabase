@@ -1,0 +1,12 @@
+.nav
+  =link_to "Return to Main Page", main_app.root_url
+
+
+%h3= "MySQL Databases"
+
+
+%div.list
+  %table.table-striped
+    = render partial: 'multi_database/shared/header_row'
+    - @mysql_schemas.each do |db|
+      = render partial: 'multi_database/shared/db_schema', object: db
