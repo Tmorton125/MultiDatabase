@@ -7,5 +7,11 @@ module MultiDatabase
        @mysql_schemas = MultiDatabase::Adapter.mysql_adapter.first.database_connections
   	end
   	
+
+  	def show_schema
+
+  	end
+  	
+
   end
 end
